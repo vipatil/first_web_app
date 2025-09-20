@@ -2,29 +2,25 @@
 
 {% block content %}
 
-<div class="container background-dark text-light rounded-3 py-5 my-5 shadow">
-    <div class="text-center mt-5">
-        <h1>A Bootstrap 5 Starter Template</h1>
-        <p class="lead">A complete project boilerplate built with Bootstrap</p>
-        <p>Bootstrap v5.2.3</p>
-    </div>
-</div>
 
-<section class="pt-4">
-    <div class="container px-lg-5">
-        <div class="row gx-lg-5">
+    <div class="container">
+        <div class="container"><p class="m-0 text-center text-dark">Image Gallery</p></div>
+        <div class="row">
             {% for painting in paintings %}
-            <div class="col-lg-6 col-xxl-4 mb-5">
-                <div class="card bg-light border-0 h-100">
-                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                        <img src="{{ painting.image_url }}" class="rounded d-block" alt="...">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
-                        <h2 class="fs-4 fw-bold">Fresh new layout</h2>
-                        <p class="mb-0">With Bootstrap 5, we've created a fresh new layout for this template!</p>
-                    </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="{{ painting.image_url }}" target="_blank">
+                        <img src="{{ painting.image_url }}" alt="Fjords" style="width:100%">
+                        <div class="title">
+                            <p>{{ painting.title }}</p>
+                        </div>
+                        <div class="caption">
+                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
-            {% endfor  %}
+            {% endfor %}
         </div>
     </div>
 </section>
